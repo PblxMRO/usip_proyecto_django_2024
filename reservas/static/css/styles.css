@@ -1,0 +1,11 @@
+.frmPaciente ul {
+    display: none;
+  }
+
+.tbl-Paciente th, td {
+  text-align: left;
+}
+
+.tbl-citas th {
+  text-align: center;
+}

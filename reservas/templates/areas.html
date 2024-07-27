@@ -1,0 +1,51 @@
+{% extends 'principal.html' %}
+{% block content %}
+<div class="mt-3"><h3>Areas de atención</h3><hr></div>
+<div class="row align-items-start">
+    <div class="col">
+        <div class="border border-secondary">
+            <table class="table table-striped">
+                <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Area</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for area in areas %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ area.nombre }}</td>
+                <td>{% if area.estado %}Habilitado{% else %}Deshabilitado{% endif %}</td>
+            </tr>  
+                {% endfor %}              
+            </tbody>
+           </table>
+        </div>
+    </div>
+    <div class="col">
+      <form action="" method="post">
+        {% csrf_token %}
+        <fieldset>
+          <legend>Nueva área</legend>
+          {% if mensaje %}
+          <div class="alert alert-success">
+            {{ mensaje }}
+         </div>
+         {% endif %}
+          {% for message in messages %}
+          <div class="alert alert-danger">
+               {{ message }}
+         </div>
+          {% endfor %}
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+{% endblock %}  

@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="container-xl">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">INICIO</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/app">APP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/areas">AREAS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/medicos">MEDICOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/pacientes">PACIENTES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/horarios">HORARIOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/pacientes">API/PACIENTES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/areas">API/AREAS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/medicos/listar">API/MEDICOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/horarios/reporte">API/HORARIOS/REPORTE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/citas/reporte">API/CITAS/REPORTE</a>
+    </li>
+</ul>
+  {% block content %}
+  <div class="mt-3"><h3>Sistema de citas médicas</h3><hr></div>
+  <div class="px-4 py-3 my-3 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">Medicdateapp</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Reserva una cita médica</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Areas</div>
+              Muesta un listado de todas la áeas disponibles y se pueden agregar nuevas areas.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Médicos</div>
+              Muestra un listado de médicos
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Pacientes</div>
+              Contiene un buscador de pacientes por apellidos y un formulario de registro de nuevos pacientes.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Horarios</div>
+              Muesta un listado de los horarios disponibles para conslutas médicas y su enlace correspondiente para acceder a la sección de Reservas de citas médicas.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Reservas de citas médicas</div>
+               Sección para registrar una cita medica, se debe buscar el paciente por C.I., selecionar la el dia y la hora hacendo click en la casilla correspondiente.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">API/PACIENTES</div>
+               ModelWiewSet que facilita las operaciones CRUD de la tabla pacientes.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">API/AREAS</div>
+              ModelWiewSet que facilita las operaciones CRUD de la tabla areas.
+            </div>
+          <span class="badge text-bg-primary rounded-pill">14</span>
+        </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">API/MEDICOS</div>
+               GenericAPIView que muestra una lista de médicos.
+            </div>
+            <span class="badge text-bg-primary rounded-pill">14</span>
+          </li>
+           <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">API/HORARIOS/REPORTE</div>
+               Custom API que muestra la cantidad y una descripcion de horarios disponibles.
+            </div>
+          <span class="badge text-bg-primary rounded-pill">14</span>
+        </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">API/CITAS/REPORTE</div>
+               Custom API que muestra el total de citas confirmadas para la siguiente semana.
+            </div>
+          <span class="badge text-bg-primary rounded-pill">14</span>
+        </li>
+        </ol>
+      </div>
+      <div class="col-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Uso de modelForms para complementar lo aprendido en el Módulo 5 del diplomado.</li>
+          <li class="list-group-item">Las validciones personalizadas funcionan correctamente solo en el administrador de Django.</li>
+          <li class="list-group-item">Ingresar al Administrador de Django: <b>user: admin2 pass: USIP2024.</b></li>
+         </ul>
+     </div>
+    </div>
+  </div>
+   {% endblock %}
+</div>
+</body>
+</html>

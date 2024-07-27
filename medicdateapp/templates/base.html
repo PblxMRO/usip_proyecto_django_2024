@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container-xl">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">INICIO</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/app">APP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/areas">AREAS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/medicos">MEDICOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/pacientes">PACIENTES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/horarios">HORARIOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/pacientes">API/PACIENTES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/areas">API/AREAS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/medicos/listar">API/MEDICOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/horarios/reporte">API/HORARIOS/REPORTE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/reservas/api/citas/reporte">API/CITAS/REPORTE</a>
+    </li>
+</ul>
+  {% block content %}
+ 
+   {% endblock %}
+</div>
+</body>
+</html>
